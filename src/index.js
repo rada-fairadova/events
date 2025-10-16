@@ -18,7 +18,7 @@ class GameBoard {
       cell.className = 'cell';
       cell.dataset.index = i;
       this.cells.push(cell);
-      this.container.appendChild(cell);
+      this.container.append(cell);
     }
   }
 
@@ -29,9 +29,11 @@ class GameBoard {
 
   addGoblin(cell) {
     cell.classList.add('active');
-    const goblin = document.createElement('div');
+    const goblin = document.createElement('img');
     goblin.className = 'goblin';
-    cell.appendChild(goblin);
+    goblin.src = 'path/to/goblin-image.png';
+    goblin.alt = 'Goblin';
+    cell.append(goblin);
   }
 
   removeGoblin(cell) {
