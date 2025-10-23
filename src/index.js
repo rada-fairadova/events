@@ -31,7 +31,7 @@ class GameBoard {
     cell.classList.add('active');
     const goblin = document.createElement('img');
     goblin.className = 'goblin';
-    goblin.src = './assets/gnome.png';
+    goblin.src = 'assets/gnome.png';
     goblin.alt = 'Goblin';
     cell.append(goblin);
   }
