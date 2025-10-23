@@ -31,7 +31,7 @@ class GameBoard {
     cell.classList.add('active');
     const goblin = document.createElement('img');
     goblin.className = 'goblin';
-    goblin.src = 'path/to/goblin-image.png';
+    goblin.src = './assets/gnome.png';
     goblin.alt = 'Goblin';
     cell.append(goblin);
   }
@@ -108,6 +108,10 @@ class Game {
     do {
       newCell = this.board.getRandomCell();
     } while (newCell === this.currentGoblinCell && this.board.cells.length > 1);
+
+    if (newCell === this.currentGoblinCell && this.board.cells.length > 1) {
+      newCell = this.board.cells.find(cell => cell !== this.currentGoblinCell);
+    }
 
     this.currentGoblinCell = newCell;
     this.board.addGoblin(this.currentGoblinCell);
